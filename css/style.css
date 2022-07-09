@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #CCCCCC;
+}
+
+form{
+    border: 1px solid aqua;
+    border-radius: 5px;
+    width: 20%;
+    margin: 10% auto;
+    padding: 20px 10px;
+    background-color: rgb(16, 46, 71);
+}
+
+h1{
+    text-align: center;
+    color: white;
+}
+
+.div_entrada{
+    padding: 5px;
+}
+
+fieldset{
+    border: none;
+    margin: 10px 0;
+}
+
+.aviso{
+    color: #FF0000;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+}
+
+fieldset span{
+    color: rgb(0, 183, 255);
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+fieldset span:hover{
+    color: rgb(91, 245, 142);
+}
+
+fieldset span:active{
+    color: white;
+}
+
+label{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+    /* font-weight: bold; */
+    color: aqua;
+}
+
+input[type="text"]{
+    padding: 2px;
+    font-size: 13px;
+    width: 80%;
+    margin-bottom: 5px;
+}
+
+input[type="time"]{
+    padding: 2px 5px;
+    font-size: 12px;
+}
+
+.botao {
+    font-family: 'Times New Roman', Times, serif;
+    display: inline-block;
+    border-radius: 0px;
+    padding: 3px 8px;
+    font-size: 15px;
+    border: 1px solid rgb(6, 226, 255);;
+    color: white;
+    background-color: rgb(97, 97, 97);
+}
+
+.botao, input[type="reset"]:hover{
+    cursor: pointer;
+}
+
+input[type="reset"]{
+    padding: 4px 6px;
+    color: white;
+    background-color: rgb(97, 97, 97);
+    border: 1px solid #ffffff;
+    margin-left: 2px;
+    font-size: 12px;
+}
+
+.invisivel{
+    display: none;
+}

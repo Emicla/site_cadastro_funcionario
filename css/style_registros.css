@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #EEEEEE;
+}
+
+.conteiner{
+    /* background-color: #6e6e6e; */
+    /* height: 500px;  */
+    text-align: center;
+}
+
+.center {
+    margin: 4em 0;
+    display: inline-block;
+    text-align: initial;
+}
+
+input {
+    font-size: 15px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+table {
+    text-align: center;
+    background-color: aquamarine;
+    padding: 3px;
+}
+
+th {
+    background-color: #EEEEEE;
+    padding: 5px 10px;
+    font-size: 18px;
+}
+
+td{
+    background-color: white;
+    font-size: 16px;
+}
+
+td:first-of-type{
+    font-weight: bold;
+    padding: 5px;
+}
+
+p{
+    /* text-align: center; */
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 45%;
+    left: 35%;
+}
+
+span{
+    display: block;
+    border-top: 1px solid aquamarine;
+    padding: 10px 12px;
+    height: 100%
+}
+
+button{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 1em;
+    padding: 5px;
+    border-left: 0.3px solid #6e6e6e;
+    border-right: 3px solid #6e6e6e;
+    border-top: 0.3px solid #6e6e6e;
+    border-bottom: 3px solid #6e6e6e;
+    border-radius: 2px;
+}
+
+button:active{
+    border: 1px solid #6e6e6e;
+    padding: 5px 8px;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: #fcbfbf;
+}
+
+.invisivel {
+    display: none;
+}

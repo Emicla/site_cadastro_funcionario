@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Verifica ponto</title>
+    </head>
+    <body>
+        <form id="formulario">
+            <h1>Registre seu ponto</h1>
+            <div class="div_entrada" id="div-conteiner">
+                <p class="aviso invisivel">Nome não e encontrado!</p>
+
+                <fieldset>
+                    <span onclick="cadastrar(this)">Cadastrar</span>
+                    <a href="./registros.html" target="_blank"><span>Registros</span></a>
+                </fieldset>
+
+                <fieldset id="div_trocar">
+                    <label for="nome" id="texto_nome">Nome:</label>
+                    <input type="text" id="input" oninput="adicionaClasse(aviso, 'invisivel')">
+                </fieldset>
+
+                <button class="botao" onclick="proximaPagina()" id="botao-proximo">Próximo</button>
+                <input type="reset" value="Limpar" onclick="input.focus()">
+                
+            </div>
+        </form>
+    </body>
+</html>
+<script src="js/funcoes.js"></script>
+<script src="js/script.js"></script>
+<script src="js/cadastro.js"></script>

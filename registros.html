@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style_registros.css">
+    <title>Registros de Horários</title>
+</head>
+<body>
+    <div class="conteiner">
+        <div class="center">
+            <input type="text" placeholder="Nome:" id="busca" oninput="buscar(this.value)">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nomes:</th>
+                        <th>Datas:</th>
+                        <th>Entradas:</th>
+                        <th>Saídas:</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo">
+
+                </tbody>
+            </table>
+            <button onclick="limpar()">Limpar Memória</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let nomesArmazenados;
+    let nome = "";
+
+    let div = document.querySelector(".conteiner");
+
+    let cammpoBusca = document.getElementById("busca");
+    let tabela = document.querySelector("table");
+    let tbody = document.querySelector("#corpo");
+
+    onload = () => {
+        nomesArmazenados = localStorage.getItem("Nomes");
+
+        if(nomesArmazenados == null){
+            div.innerHTML = `<p>Nenhum dado encontrado</p>`;
+        }else{
+            adicionaTabela();
+        }
+    };
+
+    function adicionaTabela(){
+        for(var i = 0; i <= nomesArmazenados.length; i++){
+
+            if(nomesArmazenados[i] == "," || i == nomesArmazenados.length){
+                let horarios = JSON.parse(localStorage.getItem(nome));
+
+                if(horarios.datas.length == 0){
+                    horarios.datas = ["Data não registrada"];
+                    horarios.entrada = ["Entrada não registrada"];
+                    horarios.saida = ["Saída não registrada"];
+
+                }else if(horarios.saida.length < horarios.entrada.length){
+                    horarios.saida.push("Saída não registrada");
+                }
+
+                tbody.innerHTML += `
+                                    <tr class="funcionarios">
+                                        <td class="nome">${nome}</td>
+                                        <td>${retornaHorarios(horarios.datas)}</td>
+                                        <td>${retornaHorarios(horarios.entrada)}</td>
+                                        <td>${retornaHorarios(horarios.saida)}</td>
+                                    </tr>`;
+                nome = "";
+            }else if(nomesArmazenados[i] != " " || nomesArmazenados[i - 1] != " " && nomesArmazenados[i - 1] != ","){
+                nome = nome + nomesArmazenados[i];
+            }
+        }
+    }
+
+    function retornaHorarios(valor){
+        let textoInformacao = "";
+        for(i of valor){
+            textoInformacao = textoInformacao + `<span>${i}</span>`;
+        }
+        return textoInformacao;
+    }
+
+    function buscar(letras){
+        let funcionarios = document.querySelectorAll(".funcionarios");
+        for(var i = 0; i < funcionarios.length; i++){
+            let nome = funcionarios[i].querySelector(".nome");
+            nome = nome.textContent;
+
+            letras = new RegExp(letras, "i");
+
+            if(letras.test(nome)){
+                funcionarios[i].classList.remove("invisivel");
+
+            }else{
+                funcionarios[i].classList.add("invisivel");
+            }
+        }
+    }
+
+    function limpar(){
+        localStorage.clear();
+        location.reload();
+    }
+</script>
